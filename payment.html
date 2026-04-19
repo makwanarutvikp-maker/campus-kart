@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment - Hostel Kart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">Hostel Kart</div>
+</header>
+
+<div style="max-width:600px;margin:40px auto;text-align:center;">
+
+  <h2>Select Payment Method</h2>
+
+  <!-- 🔥 QR OPTION -->
+  <div onclick="selectMethod('qr')" id="qr" 
+       style="border:2px solid #ddd;padding:20px;margin:20px;cursor:pointer;">
+    <h3>📱 Pay via QR</h3>
+
+    <!-- ✅ HIDDEN IMAGE -->
+    <img id="qrImage" src="qr.png" width="200" style="display:none;margin-top:15px;">
+  </div>
+
+  <!-- 🔥 COD OPTION -->
+  <div onclick="selectMethod('cod')" id="cod" 
+       style="border:2px solid #ddd;padding:20px;margin:20px;cursor:pointer;">
+    <h3>💵 Cash on Delivery</h3>
+  </div>
+
+  <!-- 🔥 BUTTON -->
+  <button onclick="confirmPayment()" 
+          style="padding:15px 25px;margin-top:20px;">
+    Place Order
+  </button>
+
+</div>
+
+<script>
+
+let method = "";
+
+/* 🔥 SELECT METHOD */
+function selectMethod(type){
+
+  method = type;
+
+  // reset border
+  document.getElementById("qr").style.border = "2px solid #ddd";
+  document.getElementById("cod").style.border = "2px solid #ddd";
+
+  // hide QR image first
+  document.getElementById("qrImage").style.display = "none";
+
+  // highlight selected
+  document.getElementById(type).style.border = "2px solid red";
+
+  // show QR if selected
+  if(type === "qr"){
+    document.getElementById("qrImage").style.display = "block";
+  }
+}
+
+/* 🔥 CONFIRM ORDER */
+function confirmPayment(){
+
+  if(!method){
+    alert("Please select payment method");
+    return;
+  }
+
+  localStorage.setItem("paymentMethod", method);
+
+  // clear cart
+  localStorage.removeItem("hostelKartCart");
+
+  // success page
+  window.location.href = "success.html";
+}
+
+</script>
+
+</body>
+</html>
