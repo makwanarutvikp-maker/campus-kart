@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,8 @@
   <!-- ✅ FIXED IDs -->
   <input type="text" id="name" placeholder="Full Name">
   <input type="text" id="phone" placeholder="Phone Number">
-  <input type="text" id="address" placeholder="Address">
+  <input type="text" id="hostel name" placeholder="hostel name">
+  <input type="text" id="room no" placeholder="room no">
 
   <!-- ✅ FIXED BUTTON -->
   <button onclick="goToPayment()">Continue to Payment</button>
@@ -62,7 +64,9 @@ function goToPayment(){
 
   let name = document.getElementById("name").value.trim();
   let phone = document.getElementById("phone").value.trim();
-  let address = document.getElementById("address").value.trim();
+  let address = document.getElementById("hostel name").value.trim();
+  let room  = document.getElementById("room no").value.trim();
+  
 
   if(name === "" || phone === "" || address === ""){
     alert("Please fill all details");
