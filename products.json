@@ -47,6 +47,16 @@
     "filename": "pillow.html"
   },
   {
+
+    "id": "water bottel",
+    "name": "stainless steel water bottel",
+    "price": 999,
+    "image": "https://uncrate.com/p/2022/11/yeti-yonder-water-bottle.jpg",
+    "description": "4-inch thick mattress perfect for hostel beds.",
+    "features": ["cold and hot", "durable", "stainless steel ", "Anti-slip bottom", "easy to carry"],
+    "filename": "bottel.html"
+  },
+  {
     "id": "bedsheet",
     "name": "Premium Hostel Bedsheet Set",
     "price": 499,
